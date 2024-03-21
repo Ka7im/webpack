@@ -1,1 +1,30 @@
-.j_hXvOGO{background-color:red}
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0, 0, 255, 0.3);
+  /* Полупрозрачный фон */
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  /* Радиус круга */
+  height: 100px;
+  /* Радиус круга */
+  background-color: rgba(255, 0, 0, 0);
+  /* Цвет и полная прозрачность круга */
+  border-radius: 50%;
+  /* Для создания круга */
+  clip-path: circle(50% at center);
+  /* Обрезаем область по форме круга */
+  pointer-events: none;
+  /* Чтобы клики проходили сквозь круг */
+  z-index: 1;
+  /* Поднимаем выше фона */
+}
